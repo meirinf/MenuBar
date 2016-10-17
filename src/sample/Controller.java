@@ -59,6 +59,9 @@ public class Controller {
         Text.setFont(Font.font("cmsy10", Fuente));
         TFuente = "cmsy10";
     }
+    public void Ayuda (ActionEvent actionEvent){
+        
+    }
 
 
 
