@@ -6,12 +6,14 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
         <menus>
           <Menu mnemonicParsing="false" text="Fitxer">
             <items>
+                  <MenuItem mnemonicParsing="false" onAction="#Abrir" text="Abrir" />
+                  <MenuItem mnemonicParsing="false" onAction="#Guardar" text="Guardar" />
               <MenuItem id="Exit" mnemonicParsing="false" onAction="#close" text="Cerrar el programa" />
             </items>
           </Menu>

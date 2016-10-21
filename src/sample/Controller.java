@@ -4,9 +4,16 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.*;
+
+import static java.awt.SystemColor.text;
 
 
-public class Controller {
+public class Controller extends Component {
 
     public TextArea Text;
     double Fuente  = 11;
@@ -59,10 +66,71 @@ public class Controller {
         Text.setFont(Font.font("cmsy10", Fuente));
         TFuente = "cmsy10";
     }
+
     public void Ayuda (ActionEvent actionEvent){
-        
+
+    }
+    public String Abrir(ActionEvent actionEvent) throws IOException{
+        String aux="";
+        String texto="";
+        String title= "";
+
+        try
+        {
+
+            JFileChooser file = new JFileChooser();
+            file.showOpenDialog(this);
+
+            File abre=file.getSelectedFile();
+
+            title = abre.getName();
+            Stage stage = (Stage)Text.getScene().getWindow();
+            stage.setTitle(title);
+
+            if(abre!=null)
+            {
+                FileReader archivos=new FileReader(abre);
+                BufferedReader lee=new BufferedReader(archivos);
+                while((aux=lee.readLine())!=null)
+                {
+                    texto+= aux+ "\n";
+                    Text.setText(texto);
+
+                }
+                lee.close();
+            }
+        }
+        catch(IOException ex)
+        {
+            JOptionPane.showMessageDialog(null,ex+" \nNo s'ha trobat l'arxiu", "Atenció!",JOptionPane.WARNING_MESSAGE);
+        }
+        return texto;
+
     }
 
+    public void Guardar(ActionEvent actionEvent) {
+
+        try
+        {
+            String nombre="";
+            JFileChooser file=new JFileChooser();
+            file.showSaveDialog(this);
+            File guarda =file.getSelectedFile();
+
+            if(guarda !=null)
+            {
+                FileWriter save=new FileWriter(guarda);
+                save.write(Text.getText());
+                save.close();
+            }
+
+        }
+        catch(IOException ex)
+        {
+            JOptionPane.showMessageDialog(null,
+                    "L'arxiu no s'ha guardat", "Atenció",JOptionPane.WARNING_MESSAGE);
+        }
+    }
 
 
 }
