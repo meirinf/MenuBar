@@ -54,7 +54,7 @@ public class Controller extends Component {
 
 
 
-        
+
     }
 
     public void FreeMono (ActionEvent actionEvent) {
