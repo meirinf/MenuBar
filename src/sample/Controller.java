@@ -16,7 +16,7 @@ import static java.awt.SystemColor.text;
 public class Controller extends Component {
 
     public TextArea Text;
-    double Fuente  = 11;
+    double Fuente  = 14;
     String TFuente = "FreeMono";
 
     public void close(ActionEvent actionEvent) {
@@ -51,9 +51,6 @@ public class Controller extends Component {
     public void cat (ActionEvent actionEvent){
             Text.setFont(Font.font(TFuente,14));
             Fuente = 14;
-
-
-
 
     }
 
