@@ -19,6 +19,7 @@ public class Controller extends Component {
     double Fuente  = 14;
     String TFuente = "FreeMono";
 
+    
     public void close(ActionEvent actionEvent) {
         Platform.exit();
     }
