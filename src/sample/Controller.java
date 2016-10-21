@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 
-import static java.awt.SystemColor.text;
+
 
 
 public class Controller extends Component {
