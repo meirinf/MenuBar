@@ -52,6 +52,9 @@ public class Controller extends Component {
             Text.setFont(Font.font(TFuente,14));
             Fuente = 14;
 
+
+
+        
     }
 
     public void FreeMono (ActionEvent actionEvent) {
