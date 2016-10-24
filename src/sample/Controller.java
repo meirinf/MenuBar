@@ -85,9 +85,10 @@ public class Controller extends Component {
 
     }
     public String Abrir(ActionEvent actionEvent) throws IOException{
-        String aux="";
+        String auxiliar="";
         String texto="";
-        String title= "";
+        String marcado = "";
+
 
         try
         {
@@ -97,17 +98,17 @@ public class Controller extends Component {
 
             File abre=file.getSelectedFile();
 
-            title = abre.getName();
+            marcado = abre.getName();
             Stage stage = (Stage)Text.getScene().getWindow();
-            stage.setTitle(title);
+            stage.setTitle(marcado);
 
             if(abre!=null)
             {
                 FileReader archivos=new FileReader(abre);
                 BufferedReader lee=new BufferedReader(archivos);
-                while((aux=lee.readLine())!=null)
+                while((auxiliar=lee.readLine())!=null)
                 {
-                    texto+= aux+ "\n";
+                    texto+= auxiliar+ "\n";
                     Text.setText(texto);
 
                 }
