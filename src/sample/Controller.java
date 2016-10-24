@@ -2,6 +2,7 @@ package sample;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -19,7 +20,7 @@ public class Controller extends Component {
     double Fuente  = 14;
     String TFuente = "FreeMono";
 
-    
+
     public void close(ActionEvent actionEvent) {
         Platform.exit();
     }
@@ -69,6 +70,18 @@ public class Controller extends Component {
     }
 
     public void Ayuda (ActionEvent actionEvent){
+
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info sobre el programa");
+        alert.setHeaderText("Info ");
+        alert.setContentText("Para El tamaño de texto se modifica en opciones => Tamaño \n"
+                + "El tipo de fuente se modifica en Opciones => Fuente \n"
+                +"Para Abrir un nuevo archivo Fitxer => Abrir \n"
+                +"Para Guardar Fitxer => Guardar \n ");
+        alert.getDialogPane().setPrefSize(480, 320);
+        alert.setResizable(true);
+        alert.showAndWait();
 
     }
     public String Abrir(ActionEvent actionEvent) throws IOException{
